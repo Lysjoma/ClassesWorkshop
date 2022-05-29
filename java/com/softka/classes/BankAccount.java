@@ -16,19 +16,16 @@ public class BankAccount {
     
     //The constructor empty and the constructor with all attrubutes are created.
 
-    public void setAccountNumber(int accountNumber) {
+    public BankAccount(int accountNumber, boolean activated) {
         this.accountNumber = accountNumber;
-    }
-
-    public void setActivated(boolean activated) {
         this.activated = activated;
     }
-
+    
     public BankAccount() {
         
     }
     //The setters and getters for every attrubute are created.
-
+    
     /**
      * @return the accountNumber
      */
@@ -37,17 +34,30 @@ public class BankAccount {
     }
 
     /**
+     * @param accountNumber the accountNumber to set
+     */
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    /**
      * @return the activated
      */
     public boolean isActivated() {
         return activated;
     }
-    
+
+    /**
+     * @param activated the activated to set
+     */
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
     //If the user wants to see the values after set them, a ToString method is created
 
     @Override
     public String toString() {
-        return "BankAccount{" + "accountNumber=" + accountNumber + ", activated=" + activated + '}';
+        return "BankAccount{" + "accountNumber=" + getAccountNumber() + ", activated=" + isActivated() + '}';
     }
      public String isActive(boolean isActivated){
         if (isActivated) {//The public method is active is created to know if our account is active or no.
@@ -57,6 +67,8 @@ public class BankAccount {
             return "The bank account is inactive";
         }
     }
+
+    
     
     
 }
